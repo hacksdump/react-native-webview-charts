@@ -1,0 +1,26 @@
+{
+  "name": "react-native-webview-charts",
+  "version": "1.0.0",
+  "description": "React native wrapper for web graphing libraries.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/hacksdump/react-native-webview-charts.git"
+  },
+  "keywords": [
+    "react",
+    "native",
+    "graph",
+    "chart",
+    "webview"
+  ],
+  "author": "hacksdump",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hacksdump/react-native-webview-charts/issues"
+  },
+  "homepage": "https://github.com/hacksdump/react-native-webview-charts#readme"
+}
