@@ -22,5 +22,11 @@
   "bugs": {
     "url": "https://github.com/hacksdump/react-native-webview-charts/issues"
   },
-  "homepage": "https://github.com/hacksdump/react-native-webview-charts#readme"
+  "homepage": "https://github.com/hacksdump/react-native-webview-charts#readme",
+  "dependencies": {
+    "react-native-webview": "^8.0.2"
+  },
+  "devDependencies": {
+    "metro-react-native-babel-preset": "^0.57.0"
+  }
 }
