@@ -1,9 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import {WebView} from 'react-native-webview';
-import html from './html.js';
+import generateHtmlString from './html.js';
 
 export const LineChart = (props) => {
     const [ref, setRef] = useState(null);
+    const displayAxes = (props.displayAxes && !props.displayAxes)? false: true;
+    const htmlString = generateHtmlString(displayAxes);
 
     function syncChartWithProps() {
         if (!!ref){
@@ -18,7 +20,7 @@ export const LineChart = (props) => {
             setRef(c);
           }}
           javaScriptEnabled={true}
-          source={{html: html}}
+          source={{html: htmlString}}
           allowingReadAccessToURL={true}
           domStorageEnabled={true}
           originWhitelist={['*']}

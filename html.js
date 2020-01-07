@@ -1,5 +1,11 @@
-const html = `<html>
+function booleanToString(booleanValue){
+    return !!booleanValue? 'true':'false';
+}
 
+export default function generateHtmlString(displayAxes=true) {
+const displayAxesBooleanString = booleanToString(displayAxes);
+
+const html = `<html>
 <head>
     <style>
         * {
@@ -70,13 +76,23 @@ const html = `<html>
                 },
                 scales: {
                     xAxes: [{
+                        ticks: {
+                            display: ${displayAxesBooleanString},
+                        },
                         gridLines: {
-                            drawOnChartArea: false
+                            drawOnChartArea: false,
+                            drawBorder: ${displayAxesBooleanString},
+                            display: ${displayAxesBooleanString},
                         }
                     }],
                     yAxes: [{
+                        ticks: {
+                            display: ${displayAxesBooleanString},
+                        },
                         gridLines: {
-                            drawOnChartArea: false
+                            drawOnChartArea: false,
+                            drawBorder: ${displayAxesBooleanString},
+                            display: ${displayAxesBooleanString},
                         }
                     }]
                 },
@@ -168,4 +184,5 @@ const html = `<html>
 
 </html>`;
 
-export default html;
+return html;
+}
