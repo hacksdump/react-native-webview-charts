@@ -4,7 +4,7 @@ import generateHtmlString from './html.js';
 
 export const LineChart = (props) => {
     const [ref, setRef] = useState(null);
-    const displayAxes = (props.displayAxes && !props.displayAxes)? false: true;
+    const displayAxes = (!props.displayAxes)? false: true;
     const htmlString = generateHtmlString(displayAxes);
 
     function syncChartWithProps() {
