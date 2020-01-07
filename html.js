@@ -2,8 +2,22 @@ function booleanToString(booleanValue){
     return !!booleanValue? 'true':'false';
 }
 
-export default function generateHtmlString(displayAxes=true) {
+export default function generateHtmlString(displayAxes=true, color='grey') {
 const displayAxesBooleanString = booleanToString(displayAxes);
+let graphColor = null;
+switch (color){
+    case 'grey':
+        graphColor = 'rgb(100, 100, 100)';
+        break;
+    case 'green':
+        graphColor = 'rgb(44,225,187)';
+        break;
+    case 'red':
+        graphColor = 'rgb(255, 99, 132)';
+        break;
+    default:
+        graphColor = rgb(0, 0, 0);
+}
 
 const html = `<html>
 <head>
@@ -30,7 +44,7 @@ const html = `<html>
         var height = canvas.height;
         var ctx = canvas.getContext('2d');
         gradient = ctx.createLinearGradient(0, 0, 0, height);
-        gradient.addColorStop(0, 'rgb(255, 99, 132)');
+        gradient.addColorStop(0, '${graphColor}');
         gradient.addColorStop(1, 'rgba(255, 255, 255, 0)');
 
         let xPosition = -1;
@@ -44,7 +58,7 @@ const html = `<html>
                 datasets: [{
                     label: 'My First dataset',
                     backgroundColor: gradient,
-                    borderColor: 'rgb(255, 99, 132)',
+                    borderColor: '${graphColor}',
                     data: [],
                     pointRadius: null,
                     borderWidth: 1.5,
